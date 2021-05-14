@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
@@ -11,11 +12,11 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(router)
+app.use(router);
 app.use(
   '/photos',
-  express.static(`${__dirname}/helpers`)
-)
+  express.static(`${__dirname}/helpers`),
+);
 
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
@@ -25,6 +26,6 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ message: err.message });
 });
 
+app.listen(process.env.PORT, () => console.log(`listen ${process.env.PORT}`));
 
-
-app.listen(process.env.PORT, () => console.log(`listen ${process.env.PORT}`))
+module.exports = app;

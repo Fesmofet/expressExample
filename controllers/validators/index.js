@@ -1,4 +1,4 @@
-exports.user = require('./userValidator')
+exports.user = require('./userValidator');
 
 exports.validate = (data, schema, next) => {
   const result = schema.validate(data, { abortEarly: false });
@@ -8,4 +8,4 @@ exports.validate = (data, schema, next) => {
     return next(error);
   }
   return result.value;
-}
+};

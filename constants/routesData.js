@@ -1,0 +1,3 @@
+exports.PATH = {
+  USERS: '/users',
+};
