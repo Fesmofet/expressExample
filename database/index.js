@@ -4,7 +4,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 mongoose.connect(
-  process.env.MONGO_CONNECT,
+  process.env.NODE_ENV === 'test'
+    ? process.env.MONGO_CONNECT
+    : 'mongodb://localhost:27017/testDB'
+  ,
   {
     useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false,
   },

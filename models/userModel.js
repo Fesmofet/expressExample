@@ -4,7 +4,7 @@ exports.createUser = async (data) => {
   try {
     const user = new User(data);
     await user.save();
-    return { result: user };
+    return { result: user.toObject() };
   } catch (error) {
     return { error };
   }

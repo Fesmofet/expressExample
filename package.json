@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --forceExit",
+    "test": "jest --forceExit --coverage",
     "lint": "eslint \"./**\" --fix"
   },
   "author": "",
@@ -15,6 +15,7 @@
     "body-parser": "^1.19.0",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
+    "lodash": "^4.17.21",
     "mongoose": "^5.12.8",
     "morgan": "^1.10.0",
     "multer": "^1.4.2"
